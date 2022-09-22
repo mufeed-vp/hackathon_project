@@ -144,11 +144,13 @@ const ChatRoom = ({ chatRoom, me, socket }) => {
         <VideoContainer>
           {stream && (
             <>
+
               <video playsInline ref={myVideo} muted autoPlay />
             </>
           )}
           {callAccepted && !callEnded && (
             <>
+              {/* <h6>{name}</h6> */}
               <video playsInline ref={userVideo} autoPlay />
             </>
           )}
@@ -238,18 +240,18 @@ const ChatRoom = ({ chatRoom, me, socket }) => {
             </ControlButton>
           </ControlsLeft>
           <ControlsCenter>
-            <ControlButton>
+            {/* <ControlButton>
               <SecurityIcon />
               <span>Security</span>
-            </ControlButton>
+            </ControlButton> */}
             <ControlButton onClick={() => setModal(!modal)}>
               <SupervisorAccountIcon />
               <span>Participants</span>
             </ControlButton>
-            <ControlButton onClick={() => setChat(!chat)}>
+            {/* <ControlButton onClick={() => setChat(!chat)}>
               <ChatBubbleIcon />
               <span>Chat</span>
-            </ControlButton>
+            </ControlButton> */}
           </ControlsCenter>
           <ControlsRight
             onClick={idToCall ? leaveCall : () => window.location.reload()}
@@ -258,13 +260,13 @@ const ChatRoom = ({ chatRoom, me, socket }) => {
           </ControlsRight>
         </VideoFooter>
       </MainContainer>
-      <ChatContainer chat={chat}>
+      {/* <ChatContainer chat={chat}>
         <h5>Chat</h5>
         <Chat></Chat>
         <InputContainer>
           <input type="text" placeholder="Type message here..." />
         </InputContainer>
-      </ChatContainer>
+      </ChatContainer> */}
     </Container>
   );
 };
@@ -283,10 +285,10 @@ const MainContainer = styled.div`
 `;
 const VideoContainer = styled.div`
   flex-grow: 1;
-  background-color: black;
+  background-color: white;
   border: 1px solid green;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
 
   > video {

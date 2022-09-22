@@ -19,7 +19,7 @@ const MainScreen = () => {
   ) : (
     <Container>
       <ContentContainer>
-        <h1>Simple Video Chat</h1>
+        <h1>Video Chat</h1>
         <ButtonContainer>
           <Button primary onClick={() => setChatRoom("host")}>
             Create a Room
